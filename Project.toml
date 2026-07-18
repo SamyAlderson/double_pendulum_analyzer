@@ -1,0 +1,4 @@
+name = "double_pendulum_analyzer"
+uuid = "00000000-0000-0000-0000-000000000000"
+
+[deps]
