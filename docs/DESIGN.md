@@ -1,16 +1,18 @@
 # Design Document: double_pendulum_analyzer
 
 ## Overview
-Analyse de la chaos d'un double pendulum
+# double_pendulum_analyzer
+[![Julia](https://img.shields.io/badge/Julia-1.6.0-orange.svg)](https://julialang.org/)
+[![License](https://img.shields.io/badge/Licence-MIT-green.svg)](https://opensource.o
 
 ## Architecture
-Le projet est structuré de manière modulaire pour faciliter la maintenance.
+The project follows a modular architecture for maintainability and extensibility.
 
-## Choix techniques
-- Langage: julia
-- Approche: Implementation directe avec focus sur la performance
+## Technical Choices
+- Language: julia
+- Approach: Direct implementation with focus on correctness and performance
 
-## Améliorations futures
-- Optimisation des performances
-- Ajout de tests supplémentaires
-- Documentation enrichie
+## Future Improvements
+- Performance optimization
+- Additional test coverage
+- Enhanced documentation

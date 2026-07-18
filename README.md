@@ -1,58 +1,90 @@
 # double_pendulum_analyzer
-[![Julia](https://img.shields.io/badge/Julia-1.6.0-orange.svg)](https://julialang.org/)
-[![License](https://img.shields.io/badge/Licence-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![CI](https://github.com/[votre_github_username]/double_pendulum_analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/[votre_github_username]/double_pendulum_analyzer/actions/workflows/ci.yml)
 
-## Description détaillée
+> Analyzing the chaotic behavior of double pendulums in a data-driven approach.
 
-L'analyse de la chaos d'un double pendulum est un problème complexe qui nécessite une approche multidisciplinaire. Ce projet propose une implémentation en Julia pour analyser la dynamique d'un double pendulum et détecter les phénomènes de chaos. Le modèle du double pendulum est basé sur les équations de mouvement classiques, tandis que la détection de la chaos utilise des techniques d'analyse fréquentielle.
+## Overview
 
-## Fonctionnalités
+The double_pendulum_analyzer is a Julia-based project that utilizes numerical methods to analyze the chaotic behavior of double pendulums. By simulating the pendulum's motion and detecting signs of chaos, this project aims to provide a deeper understanding of complex systems and their potential applications in physics, engineering, and beyond. This project's findings can help scientists and engineers better comprehend the intricate dynamics of pendulums, ultimately contributing to the development of novel technologies and solutions.
 
-* Modèle du double pendulum basé sur les équations de mouvement classiques
-* Détection de la chaos à l'aide d'analyse fréquentielle
-* Affichage des résultats sous forme de graphiques
-* Simulations paramétrables pour étudier les effets des différentes variables
+## Features
 
-## Installation
+* **Chaotic Behavior Detection**: Identify signs of chaos in double pendulums using numerical methods.
+* **Numerical Simulation**: Simulate the motion of double pendulums using Julia's numerical libraries.
+* **Data Visualization**: Create plots to visualize the pendulum's motion and detect patterns.
+* **Parameter Tuning**: Explore the effects of varying parameters on the pendulum's behavior.
+* **Chaos Threshold Detection**: Identify the threshold at which chaos occurs in double pendulums.
+* **System Model Development**: Develop a mathematical model of the double pendulum system.
+* **Comparative Analysis**: Compare the behavior of double pendulums with different parameter settings.
 
-Pour installer ce projet, vous avez besoin de Julia 1.6.0 ou supérieur. Vous pouvez télécharger Julia sur le site officiel <https://julialang.org/downloads/>. Une fois Julia installé, vous pouvez cloner ce dépôt en utilisant Git.
+## Getting Started
+
+### Prerequisites
+
+* Julia 1.6.0 or later
+* Julia's numerical libraries (e.g., DifferentialEquations, Plots)
+* A code editor or IDE (e.g., Visual Studio Code, IntelliJ IDEA)
+
+### Installation
 
 ```bash
+# Clone the repository
 git clone https://github.com/[votre_github_username]/double_pendulum_analyzer.git
+
+# Navigate to the project directory
+cd double_pendulum_analyzer
+
+# Install required packages
+using Pkg
+Pkg.activate(".")
+Pkg.add("DifferentialEquations")
+Pkg.add("Plots")
 ```
 
-## Usage avec exemples
-
-Pour lancer le projet, vous pouvez utiliser la commande suivante :
+### Usage
 
 ```bash
-julia src/main.jl
+# Run the main script
+using julia
+include("src/main.jl")
+
+# Visualize the pendulum's motion
+using Plots
+plot( pendulum_data )
 ```
 
-Cela lancera la simulation par défaut avec les paramètres définis dans le fichier `data/parameters.jl`. Vous pouvez modifier ces paramètres pour étudier les effets des différentes variables.
+## Architecture
 
-## Architecture du projet
+The project is structured into several key files:
 
-Le projet est composé de plusieurs fichiers et dossiers :
+* `src/pendulum.jl`: Defines the mathematical model of the double pendulum system.
+* `src/chaos_detection.jl`: Implements numerical methods for detecting chaotic behavior.
+* `src/plotting.jl`: Creates plots to visualize the pendulum's motion.
+* `src/main.jl`: Orchestrates the simulation and visualization of the pendulum's behavior.
+* `data/parameters.jl`: Stores parameter settings for the simulation.
 
-* `src/main.jl`: Fichier principal qui lance la simulation
-* `src/pendulum.jl`: Modèle du double pendulum basé sur les équations de mouvement classiques
-* `src/chaos_detection.jl`: Détection de la chaos à l'aide d'analyse fréquentielle
-* `src/plotting.jl`: Affichage des résultats sous forme de graphiques
-* `data/parameters.jl`: Fichier de paramètres pour les simulations
-* `test/test_chaos_detection.jl`: Tests pour la détection de la chaos
+## API Reference
 
-## Contribuer
+* `pendulum_model(params)`: Returns a mathematical model of the double pendulum system given parameter settings.
+* `chaos_detection(data)`: Detects signs of chaos in the pendulum's motion using numerical methods.
+* `plot_pendulum(data)`: Creates a plot to visualize the pendulum's motion.
 
-Pour contribuer à ce projet, vous pouvez suivre les étapes suivantes :
+## Testing
 
-1. Cloner ce dépôt en utilisant Git.
-2. Créer une branche pour votre nouvelle fonctionnalité.
-3. Modifier les fichiers nécessaires pour implémenter votre nouvelle fonctionnalité.
-4. Exécuter les tests pour vérifier que tout fonctionne correctement.
-5. Commiter vos modifications et créer une pull request pour que les autres développeurs puissent les revérifier.
+```bash
+# Run the test suite
+using Test
+include("test/test_chaos_detection.jl")
+```
 
-## Licence
+## Contributing
 
-Ce projet est sous licence MIT. Vous pouvez utiliser, modifier et distribuer ce code sous les conditions de la licence MIT.
+1. Fork the repository
+2. Create a feature branch
+3. Commit changes
+4. Push and open a PR
+
+## License
+
+MIT License
+
+This project is licensed under the MIT License, which allows for free use, modification, and distribution of the code. By contributing to this project, you agree to abide by the terms of the MIT License.
