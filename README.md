@@ -1,90 +1,63 @@
 # double_pendulum_analyzer
+Chaotic motion analysis and visualization for the double pendulum system
 
-> Analyzing the chaotic behavior of double pendulums in a data-driven approach.
+## What it does
+This Julia package analyzes and visualizes the chaotic motion of a double pendulum system. It uses numerical methods to compute the pendulum's trajectory and visualizes the results using Plots.jl.
 
-## Overview
-
-The double_pendulum_analyzer is a Julia-based project that utilizes numerical methods to analyze the chaotic behavior of double pendulums. By simulating the pendulum's motion and detecting signs of chaos, this project aims to provide a deeper understanding of complex systems and their potential applications in physics, engineering, and beyond. This project's findings can help scientists and engineers better comprehend the intricate dynamics of pendulums, ultimately contributing to the development of novel technologies and solutions.
-
-## Features
-
-* **Chaotic Behavior Detection**: Identify signs of chaos in double pendulums using numerical methods.
-* **Numerical Simulation**: Simulate the motion of double pendulums using Julia's numerical libraries.
-* **Data Visualization**: Create plots to visualize the pendulum's motion and detect patterns.
-* **Parameter Tuning**: Explore the effects of varying parameters on the pendulum's behavior.
-* **Chaos Threshold Detection**: Identify the threshold at which chaos occurs in double pendulums.
-* **System Model Development**: Develop a mathematical model of the double pendulum system.
-* **Comparative Analysis**: Compare the behavior of double pendulums with different parameter settings.
-
-## Getting Started
-
-### Prerequisites
-
-* Julia 1.6.0 or later
-* Julia's numerical libraries (e.g., DifferentialEquations, Plots)
-* A code editor or IDE (e.g., Visual Studio Code, IntelliJ IDEA)
-
-### Installation
-
+## Installation
+To use double_pendulum_analyzer, clone this repository and add it to your Julia environment using Pkg.jl:
 ```bash
-# Clone the repository
-git clone https://github.com/[votre_github_username]/double_pendulum_analyzer.git
-
-# Navigate to the project directory
+git clone https://github.com/SamyAlderson/double_pendulum_analyzer.git
 cd double_pendulum_analyzer
-
-# Install required packages
-using Pkg
-Pkg.activate(".")
-Pkg.add("DifferentialEquations")
-Pkg.add("Plots")
+using Pkg; Pkg.activate("."); Pkg.add("Plots", "Documenter")
 ```
+## Usage
+To run the double pendulum analyzer, use the following command:
+```julia
+using double_pendulum_analyzer
+double_pendulum_analyzer(double_pendulum_config)
+```
+See `src/config.jl` for example configurations.
 
-### Usage
-
+## Building from source
+To build double_pendulum_analyzer from source, run the following commands:
 ```bash
-# Run the main script
-using julia
-include("src/main.jl")
-
-# Visualize the pendulum's motion
-using Plots
-plot( pendulum_data )
+git clone https://github.com/SamyAlderson/double_pendulum_analyzer.git
+cd double_pendulum_analyzer
+julia --project=Project.toml build
 ```
-
-## Architecture
-
-The project is structured into several key files:
-
-* `src/pendulum.jl`: Defines the mathematical model of the double pendulum system.
-* `src/chaos_detection.jl`: Implements numerical methods for detecting chaotic behavior.
-* `src/plotting.jl`: Creates plots to visualize the pendulum's motion.
-* `src/main.jl`: Orchestrates the simulation and visualization of the pendulum's behavior.
-* `data/parameters.jl`: Stores parameter settings for the simulation.
-
-## API Reference
-
-* `pendulum_model(params)`: Returns a mathematical model of the double pendulum system given parameter settings.
-* `chaos_detection(data)`: Detects signs of chaos in the pendulum's motion using numerical methods.
-* `plot_pendulum(data)`: Creates a plot to visualize the pendulum's motion.
-
-## Testing
-
+## Running tests
+To run the test suite, use the following command:
 ```bash
-# Run the test suite
-using Test
-include("test/test_chaos_detection.jl")
+julia --project=Project.toml test
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit changes
-4. Push and open a PR
+## Project structure
+- `src/`: source code
+  - `config.jl`: configuration module
+  - `pandas.jl`: numerical methods
+  - `visualize.jl`: visualization module
+- `test/`: test suite
+  - `test_config.jl`: test configurations
+  - `test_pandas.jl`: test numerical methods
+  - `test_visualize.jl`: test visualization module
 
 ## License
+Copyright (c) 2026 SamyAlderson
 
-MIT License
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This project is licensed under the MIT License, which allows for free use, modification, and distribution of the code. By contributing to this project, you agree to abide by the terms of the MIT License.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
